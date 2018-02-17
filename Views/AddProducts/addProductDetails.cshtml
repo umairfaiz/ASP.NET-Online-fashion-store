@@ -1,0 +1,76 @@
+﻿@model CorrectTemp.Models.Product
+
+@{
+    ViewBag.Title = "addProductDetails";
+    Layout = "~/Views/Shared/admin_layout.cshtml";
+}
+
+<section id="aa-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-contact-area">
+                    <div class="aa-contact-address">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="aa-contact-address-left">
+                                        @using (Html.BeginForm("addProductDetails", "AddProducts", FormMethod.Post, new { @class = "comments-form contact-form" }))
+                                        {
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="itemID" placeholder="Item ID" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="ItemName" placeholder="Item Name" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="Stock" placeholder="Stock Units" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="Discount" placeholder="Item Discount %" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="Price" placeholder="Item Price (Rs.)" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="radio" name="radiobtn" value="Available" checked><span>Available</span><br />
+                                                        <input type="radio" name="radiobtn" value="Not Available"><span>Not Available</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="radio" name="radiobtnCategory" value="Men" checked><span>Men</span><br />
+                                                        <input type="radio" name="radiobtnCategory" value="Women"><span>Women</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="3" name="ItemDescription" placeholder="Item Description"></textarea>
+                                            </div>
+                                            <button class="aa-secondary-btn" type="submit">Upload</button>
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CorrectTemp.Models.Message>
+
+@{
+    ViewBag.Title = "admin_Inbox";
+    Layout = "~/Views/Shared/admin_layout.cshtml";
+}
+
+<div class="left-content">
+    <!--inner block start here-->
+    <div class="col-md-8 mailbox-content  tab-content tab-content-in">
+        <div class="tab-pane active text-style" id="tab1">
+            <div class="mailbox-border">
+                <table class="table tab-border">
+                    <tbody>
+                        @foreach (CorrectTemp.Models.Message msg in @Model)
+                        {
+                            using (Html.BeginForm("admin_Remove_mail", "admin_Contact", new { id = msg.msgID }))
+                            {
+                                <tr class="unread checked" align="center">
+                                    <td class="hidden-xs"><input type="submit" value="Delete" /></td>
+                                    <td class="hidden-xs">@msg.username</td>
+                                    <td>@msg.subject</td>
+                                    <td>@msg.messageDetail</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="compose-block" align="center">
+                <div class="fa fa-envelope-o" style="align-content:center; border: none">@Html.ActionLink(" Compose", "admin_Reply", "admin_Contact")</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

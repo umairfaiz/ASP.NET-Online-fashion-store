@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BWAModelStoreContainer" CdmEntityContainer="BWAEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="BWAModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="shippingAddress" ColumnName="shippingAddress" />
+          <ScalarProperty Name="cardNumber" ColumnName="cardNumber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="BWAModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ItemCategory" ColumnName="ItemCategory" />
+          <ScalarProperty Name="ItemAvailability" ColumnName="ItemAvailability" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="BWAModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="reciever" ColumnName="reciever" />
+          <ScalarProperty Name="messageDetail" ColumnName="messageDetail" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="msgID" ColumnName="msgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="BWAModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+          <ScalarProperty Name="cartID" ColumnName="cartID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wlists">
+      <EntityTypeMapping TypeName="BWAModel.Wlist">
+        <MappingFragment StoreEntitySet="Wlist">
+          <ScalarProperty Name="itemPrice" ColumnName="itemPrice" />
+          <ScalarProperty Name="itemName" ColumnName="itemName" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+          <ScalarProperty Name="wishlistID" ColumnName="wishlistID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CorrectTemp.Models.Cart>
+
+@{
+    ViewBag.Title = "totalSales";
+    Layout = "~/Views/Shared/admin_layout.cshtml";
+}
+
+<!-- Cart view section -->
+<section id="checkout">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="checkout-area">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkout-right">
+                                <form action="orderServlet" method="POST">
+                                    <h4>Sales Summary</h4>
+                                    <div class="aa-order-summary-area">
+                                        <table class="table table-responsive">
+                                            <tfoot>
+                                                    <tr>
+                                                        <th>Total Sales</th>
+                                                        <td>Rs.@ViewBag.Total</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Total units sold</th>
+                                                        <td>@ViewBag.Total_Units</td>
+                                                    </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="aa-browse-btn">@Html.ActionLink("Home", "admin_Index", "Home")</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Cart view section -->
+
+

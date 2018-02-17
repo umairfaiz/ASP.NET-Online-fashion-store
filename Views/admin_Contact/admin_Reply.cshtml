@@ -1,0 +1,52 @@
+﻿@model CorrectTemp.Models.Message
+
+@{
+    ViewBag.Title = "admin_Reply";
+    Layout = "~/Views/Shared/admin_layout.cshtml";
+}
+
+<!-- start contact section -->
+<section id="aa-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-contact-area">
+                    <div class="aa-contact-address">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="aa-contact-address-left">
+                                    @using (Html.BeginForm("admin_Reply_msg", "admin_Contact", FormMethod.Post, new { @class = "comments-form contact-form" }))
+                                    {
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.TextBoxFor(m => m.username, new { placeholder = "Admin username", @class = "form-control" })
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.TextBoxFor(m => m.reciever, new { placeholder = "Send to", @class = "form-control" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">          
+                                                <div class="form-group">
+                                                    @Html.TextBoxFor(m => m.subject, new { placeholder = "Subject", @class = "form-control" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(m => m.messageDetail, new { placeholder = "Message", @class = "form-control" })
+                                        </div>
+                                        <button class="aa-secondary-btn">Send</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

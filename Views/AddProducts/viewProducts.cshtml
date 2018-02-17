@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CorrectTemp.Models.Product>
+@{
+    ViewBag.Title = "viewProducts";
+    Layout = "~/Views/Shared/admin_layout.cshtml";
+}
+
+<div class="left-content">
+    <!--inner block start here-->
+    <div class="col-md-8 mailbox-content  tab-content tab-content-in">
+        <div class="tab-pane active text-style" id="tab1">
+            <div class="mailbox-border">
+                <table class="table tab-border">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (CorrectTemp.Models.Product pro in @Model)
+                        {
+                            using (Html.BeginForm("admin_Remove_Product", "AddProducts", new { id = pro.ItemID }))
+                            {
+                                <tr class="unread checked" align="center">
+                                    <td class="hidden-xs"><input type="submit" value="Delete" /></td>
+                                    <td class="hidden-xs">@pro.ItemName</td>
+                                    <td>@pro.Price</td>
+                                    <td>@pro.ItemCategory</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

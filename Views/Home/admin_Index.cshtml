@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "admin_Index";
+    Layout = "~/Views/Shared/admin_layout.cshtml";
+}
+
+<section id="menu">
+    <div class="container">
+        <div class="menu-area">
+            <!-- Navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / menu -->
+<!-- Start slider -->
+<section id="aa-slider">
+
+    <div class="aa-slider-area">
+        <div id="sequence" class="seq">
+            <ul class="seq-canvas">
+                <!-- single slide item -->
+                <li>
+                    <div class="seq-model">
+                        <img data-seq src="@Url.Content("~/Content/")img/slider/adminSlider1.jpg"/>
+                    </div>
+                    <div class="seq-title">
+                        <form action="">
+                            <div class="aa-shop-now-btn aa-secondary-btn">@Html.ActionLink("Compose message", "admin_Reply", "admin_Contact")</div><br />
+                            <div class="aa-shop-now-btn aa-secondary-btn">@Html.ActionLink("Check inbox", "admin_Inbox", "admin_Contact")</div><br />
+                            <div class="aa-shop-now-btn aa-secondary-btn">@Html.ActionLink("Add products", "AddProducts", "AddProducts")</div><br />
+                            <div class="aa-shop-now-btn aa-secondary-btn">@Html.ActionLink("Sales", "totalSales", "Sales")</div><br />
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- / slider -->
+
+

@@ -1,0 +1,66 @@
+﻿@using CorrectTemp.Models;
+@{
+    ViewBag.Title = "Wishlist";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- catg header banner section -->
+<section id="aa-catg-head-banner">
+    <img src="@Url.Content("~/Content/")img/wishlist-header.jpg" alt="fashion img">
+    <div class="aa-catg-head-banner-area">
+        <div class="container">
+            <div class="aa-catg-head-banner-content">
+                <h2>Wishlist</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Wishlist</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / catg header banner section -->
+<!-- Cart view section -->
+<section id="cart-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cart-view-area">
+                    <div class="cart-view-table aa-wishlist-table">
+                        <form action="">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Product</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (Product items in (List<Product>)Session["wlist"])
+                                            {
+                                                    <tr>
+                                                        <td><a class="remove" href="#">@Html.ActionLink("Remove", "remove_wList_Item", "Wishlist", new { id = items.ItemID }, null)</a></td>
+                                                        <td><a href="#"><img src="@Url.Content("~/Content/")img/@(items.ItemID).png" alt="img"></a></td>
+                                                        <td>@items.ItemName</td>
+                                                        <td>Rs. @items.Price</td>
+                                                        <td><a>@Html.ActionLink(" Add To Cart", "add_to_cart", "Product", new { id = items.ItemID }, null)</a></td>
+                                                       
+                                                    </tr>
+                                            }
+                                    </tbody>
+                                </table>
+                                <div>@Html.ActionLink("Continue shopping", "add_WlistDB", "Wishlist", new { @class = "aa-cart-view-btn" })</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Cart view section -->
+

@@ -1,0 +1,105 @@
+﻿@using CorrectTemp.Controllers;
+@model IEnumerable<CorrectTemp.Models.Product>
+
+@{
+    ViewBag.Title = "women";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- catg header banner section -->
+<section id="aa-catg-head-banner">
+    <img src="@Url.Content("~/Content/")img/women-header.jpg" alt="fashion img">
+    <div class="aa-catg-head-banner-area">
+        <div class="container">
+            <div class="aa-catg-head-banner-content">
+                <h2>Women</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Women</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / catg header banner section -->
+<!-- product category -->
+<section id="aa-product-category">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-8 col-md-push-3">
+                <div class="aa-product-catg-content">
+                    <div class="aa-product-catg-head">
+                        <div class="aa-product-catg-head-right">
+                            <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
+                            <a id="list-catg" href="#"><span class="fa fa-list"></span></a>
+                        </div>
+                    </div>
+                    <div class="aa-product-catg-body">
+                        <ul class="aa-product-catg">
+                            <!-- start single product item -->
+                            @foreach (CorrectTemp.Models.Product item in @Model)
+                            {
+                                <li>
+                                    <figure>
+                                        <a class="aa-product-img" href="#"><img src="@Url.Content("~/Content/")img/@(item.ItemID).png" alt="polo shirt img"></a>
+                                        @if (Session["userSession"] != null)
+                                        {
+                                            <h6 class="aa-add-card-btn" style="background: red; border: none"><span class="fa fa-shopping-cart"></span>@Html.ActionLink(" Add To Cart", "add_to_cart", "Product", new { id = item.ItemID }, null)</h6>
+                                        }
+
+                                        <figcaption>
+                                            <h4 class="aa-product-title"><a href="#">@item.ItemName</a></h4>
+                                            <span class="aa-product-price">@item.Price</span><br />
+                                        </figcaption>
+                                    </figure>
+                                    @if (Session["userSession"] != null)
+                                    {
+                                        <div class="aa-product-hvr-content">
+                                            <button style="background: white; border: none" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">@Html.ActionLink("Add to Wishlist", "add_to_wishlist", "Wishlist", new { id = item.ItemID }, null)</button>
+                                        </div>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="aa-product-catg-pagination">
+                        <nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li>@Html.ActionLink("1", "Product", "Product")</li>
+                                <li>@Html.ActionLink("2", "women", "Product")</li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
+                <aside class="aa-sidebar">
+                    <!-- single sidebar -->
+                    <div class="aa-sidebar-widget">
+                        <h3>Category</h3>
+                        <ul class="aa-catg-nav">
+                            <li>@Html.ActionLink("Men", "Product", "Product")</li>
+                            <li>@Html.ActionLink("Women", "women", "Product")</li>
+                            <li><a href="">Kids</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- / product category -->
+
+
+

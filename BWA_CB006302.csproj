@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E88EEB20-1577-4EB5-A7CE-E0FF6008F069}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CorrectTemp</RootNamespace>
+    <AssemblyName>CorrectTemp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\jquery.simpleLens.css" />
+    <Content Include="Content\css\jquery.smartmenus.bootstrap.css" />
+    <Content Include="Content\css\nouislider.css" />
+    <Content Include="Content\css\slick.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\theme-color\bridge-theme.css" />
+    <Content Include="Content\css\theme-color\dark-red-theme.css" />
+    <Content Include="Content\css\theme-color\default-theme.css" />
+    <Content Include="Content\css\theme-color\green-theme.css" />
+    <Content Include="Content\css\theme-color\lite-blue-theme.css" />
+    <Content Include="Content\css\theme-color\orange-theme.css" />
+    <Content Include="Content\css\theme-color\pink-theme.css" />
+    <Content Include="Content\css\theme-color\purple-theme.css" />
+    <Content Include="Content\css\theme-color\red-theme.css" />
+    <Content Include="Content\css\theme-color\yellow-theme.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\client-brand1.png" />
+    <Content Include="Content\img\client-brand2.png" />
+    <Content Include="Content\img\client-brand3.png" />
+    <Content Include="Content\img\client-brand4.png" />
+    <Content Include="Content\img\client-brand5.png" />
+    <Content Include="Content\img\close-icon.png" />
+    <Content Include="Content\img\electronics\electronic-1.png" />
+    <Content Include="Content\img\electronics\electronic-2.png" />
+    <Content Include="Content\img\electronics\electronic-3.png" />
+    <Content Include="Content\img\electronics\electronic-4.png" />
+    <Content Include="Content\img\electronics\electronic-5.png" />
+    <Content Include="Content\img\electronics\electronic-6.png" />
+    <Content Include="Content\img\electronics\electronic-7.png" />
+    <Content Include="Content\img\electronics\electronic-8.png" />
+    <Content Include="Content\img\fashion-banner.jpg" />
+    <Content Include="Content\img\fashion\._1.jpg" />
+    <Content Include="Content\img\fashion\._2.jpg" />
+    <Content Include="Content\img\fashion\._3.jpg" />
+    <Content Include="Content\img\fashion\._4.jpg" />
+    <Content Include="Content\img\fashion\._5.jpg" />
+    <Content Include="Content\img\fashion\._fashion-header-bg-8.jpg" />
+    <Content Include="Content\img\fashion\1.jpg" />
+    <Content Include="Content\img\fashion\2.jpg" />
+    <Content Include="Content\img\fashion\3.jpg" />
+    <Content Include="Content\img\fashion\4.jpg" />
+    <Content Include="Content\img\fashion\5.jpg" />
+    <Content Include="Content\img\fashion\fashion-header-bg-8.jpg" />
+    <Content Include="Content\img\flag\._english.jpg" />
+    <Content Include="Content\img\flag\._french.jpg" />
+    <Content Include="Content\img\flag\english.jpg" />
+    <Content Include="Content\img\flag\french.jpg" />
+    <Content Include="Content\img\kids-promo.jpg" />
+    <Content Include="Content\img\logo.jpg" />
+    <Content Include="Content\img\logomakr_97i94r.jpg" />
+    <Content Include="Content\img\man-small-1.jpg" />
+    <Content Include="Content\img\man\polo-shirt-1.png" />
+    <Content Include="Content\img\man\polo-shirt-2.png" />
+    <Content Include="Content\img\man\polo-shirt-3.png" />
+    <Content Include="Content\img\man\polo-shirt-4.png" />
+    <Content Include="Content\img\man\polo-shirt-5.png" />
+    <Content Include="Content\img\man\polo-shirt-6.png" />
+    <Content Include="Content\img\man\t-shirt-1.png" />
+    <Content Include="Content\img\paypal.jpg" />
+    <Content Include="Content\img\promo-bags.jpg" />
+    <Content Include="Content\img\promo-men.jpg" />
+    <Content Include="Content\img\promo-shoes.jpg" />
+    <Content Include="Content\img\promo-women.jpg" />
+    <Content Include="Content\img\slider\1.jpg" />
+    <Content Include="Content\img\slider\2.jpg" />
+    <Content Include="Content\img\slider\3.jpg" />
+    <Content Include="Content\img\slider\4.jpg" />
+    <Content Include="Content\img\slider\5.jpg" />
+    <Content Include="Content\img\slider\admin.jpg" />
+    <Content Include="Content\img\slider\ajax-loader.gif" />
+    <Content Include="Content\img\slider\bt-next%402x.png" />
+    <Content Include="Content\img\slider\bt-next.png" />
+    <Content Include="Content\img\slider\bt-prev%402x.png" />
+    <Content Include="Content\img\slider\bt-prev.png" />
+    <Content Include="Content\img\sports\sport-1.png" />
+    <Content Include="Content\img\sports\sport-2.png" />
+    <Content Include="Content\img\sports\sport-3.png" />
+    <Content Include="Content\img\sports\sport-4.png" />
+    <Content Include="Content\img\sports\sport-5.png" />
+    <Content Include="Content\img\sports\sport-6.png" />
+    <Content Include="Content\img\sports\sport-7.png" />
+    <Content Include="Content\img\sports\sport-8.png" />
+    <Content Include="Content\img\testimonial-banner.jpg" />
+    <Content Include="Content\img\view-slider\._loading.gif" />
+    <Content Include="Content\img\view-slider\large\polo-shirt-1.png" />
+    <Content Include="Content\img\view-slider\large\polo-shirt-2.png" />
+    <Content Include="Content\img\view-slider\large\polo-shirt-3.png" />
+    <Content Include="Content\img\view-slider\large\polo-shirt-4.png" />
+    <Content Include="Content\img\view-slider\loading.gif" />
+    <Content Include="Content\img\view-slider\medium\._polo-shirt-1.png" />
+    <Content Include="Content\img\view-slider\medium\._polo-shirt-2.png" />
+    <Content Include="Content\img\view-slider\medium\._polo-shirt-3.png" />
+    <Content Include="Content\img\view-slider\medium\._polo-shirt-4.png" />
+    <Content Include="Content\img\view-slider\medium\polo-shirt-1.png" />
+    <Content Include="Content\img\view-slider\medium\polo-shirt-2.png" />
+    <Content Include="Content\img\view-slider\medium\polo-shirt-3.png" />
+    <Content Include="Content\img\view-slider\medium\polo-shirt-4.png" />
+    <Content Include="Content\img\view-slider\thumbnail\._polo-shirt-1.png" />
+    <Content Include="Content\img\view-slider\thumbnail\._polo-shirt-2.png" />
+    <Content Include="Content\img\view-slider\thumbnail\._polo-shirt-3.png" />
+    <Content Include="Content\img\view-slider\thumbnail\._polo-shirt-4.png" />
+    <Content Include="Content\img\view-slider\thumbnail\polo-shirt-1.png" />
+    <Content Include="Content\img\view-slider\thumbnail\polo-shirt-2.png" />
+    <Content Include="Content\img\view-slider\thumbnail\polo-shirt-3.png" />
+    <Content Include="Content\img\view-slider\thumbnail\polo-shirt-4.png" />
+    <Content Include="Content\img\woman-small-1.jpg" />
+    <Content Include="Content\img\woman-small-2.jpg" />
+    <Content Include="Content\img\P001.png" />
+    <Content Include="Content\img\P002.png" />
+    <Content Include="Content\img\P003.png" />
+    <Content Include="Content\img\women-promo.jpg" />
+    <Content Include="Content\img\women\girl-4.png" />
+    <Content Include="Content\img\women\girl-5.png" />
+    <Content Include="Content\img\women\girl-6.png" />
+    <Content Include="Content\img\women\girl-7.png" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery.simpleGallery.js" />
+    <Content Include="Content\js\jquery.simpleLens.js" />
+    <Content Include="Content\js\jquery.smartmenus.bootstrap.js" />
+    <Content Include="Content\js\jquery.smartmenus.js" />
+    <Content Include="Content\js\nouislider.js" />
+    <Content Include="Content\js\slick.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Models.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Models.edmx</DependentUpon>
+      <LastGenOutput>Models.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Models.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Models.edmx</DependentUpon>
+      <LastGenOutput>Models.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddProductsController.cs" />
+    <Compile Include="Controllers\admin_ContactController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\WishlistController.cs" />
+    <Compile Include="DataAccess\DA.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Message.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\upload_image.cs" />
+    <Compile Include="Models\userAccount.cs" />
+    <Compile Include="Models\Wlist.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="random_numberGen.cs" />
+    <Compile Include="Resources\lang.fr.Designer.cs">
+      <DependentUpon>lang.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lang.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Account\myAccount.cshtml" />
+    <Content Include="Views\Checkout\Checkout.cshtml" />
+    <Content Include="Views\Wishlist\Wishlist.cshtml" />
+    <Content Include="Views\Account\login.cshtml" />
+    <EntityDeploy Include="Models\Models.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Models.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Models.edmx.diagram">
+      <DependentUpon>Models.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\img\view-slider\._large" />
+    <Content Include="Content\img\view-slider\._medium" />
+    <Content Include="Content\img\view-slider\._thumbnail" />
+    <Content Include="Content\scss\base\.__base.scss" />
+    <Content Include="Content\scss\base\.__mixins.scss" />
+    <Content Include="Content\scss\base\.__variables.scss" />
+    <Content Include="Content\scss\base\_base.scss" />
+    <Content Include="Content\scss\base\_mixins.scss" />
+    <Content Include="Content\scss\base\_variables.scss" />
+    <Content Include="Content\scss\layouts\.__footer.scss" />
+    <Content Include="Content\scss\layouts\.__header.scss" />
+    <Content Include="Content\scss\layouts\.__nav.scss" />
+    <Content Include="Content\scss\layouts\_footer.scss" />
+    <Content Include="Content\scss\layouts\_header.scss" />
+    <Content Include="Content\scss\layouts\_nav.scss" />
+    <Content Include="Content\scss\modules\.__buttons.scss" />
+    <Content Include="Content\scss\modules\.__responsive.scss" />
+    <Content Include="Content\scss\modules\.__sections.scss" />
+    <Content Include="Content\scss\modules\.__typography.scss" />
+    <Content Include="Content\scss\modules\_buttons.scss" />
+    <Content Include="Content\scss\modules\_responsive.scss" />
+    <Content Include="Content\scss\modules\_sections.scss" />
+    <Content Include="Content\scss\modules\_typography.scss" />
+    <Content Include="Content\scss\style.scss" />
+    <Content Include="Views\Product\Product.cshtml" />
+    <Content Include="Views\Product\Cart.cshtml" />
+    <Content Include="Views\Contact\view_Inbox.cshtml" />
+    <Content Include="Views\Home\admin_Index.cshtml" />
+    <Content Include="Views\admin_Contact\admin_Inbox.cshtml" />
+    <Content Include="Views\admin_Contact\admin_Reply.cshtml" />
+    <Content Include="Views\AddProducts\AddProducts.cshtml" />
+    <Content Include="Views\AddProducts\addProductDetails.cshtml" />
+    <Content Include="Views\Sales\totalSales.cshtml" />
+    <Content Include="Views\Account\resetPassword.cshtml" />
+    <Content Include="Views\Product\women.cshtml" />
+    <Content Include="Views\Shared\admin_layout.cshtml" />
+    <Content Include="Views\Language\Index.cshtml" />
+    <Content Include="Views\AddProducts\viewProducts.cshtml" />
+    <Content Include="ClassDiagram1.cd" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\lang.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\lang.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57159</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57159/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

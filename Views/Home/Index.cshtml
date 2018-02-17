@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<!-- Start Promo section -->
+<section id="aa-promo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-promo-area">
+                    <div class="row">
+                        <!-- promo left -->
+                        <div class="col-md-5 no-padding">
+                            <div class="aa-promo-left">
+                                <div class="aa-promo-banner">
+                                    <img src="@Url.Content("~/Content/")img/promo-men.jpg" alt="img">
+                                    <div class="aa-prom-content">
+                                        <span>@CorrectTemp.Resources.lang.SeventyFive_off</span>
+                                        <h4>@Html.ActionLink(CorrectTemp.Resources.lang.For_Men, "Product", "Product")</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- promo right -->
+                        <div class="col-md-7 no-padding">
+                            <div class="aa-promo-right">
+                                <div class="aa-single-promo-right">
+                                    <div class="aa-promo-banner">
+                                        <img src="@Url.Content("~/Content/")img/promo-women.jpg" alt="img">
+                                        <div class="aa-prom-content">
+                                            <span>@CorrectTemp.Resources.lang.Exclusive_Item</span>
+                                            <h4>@Html.ActionLink(CorrectTemp.Resources.lang.For_Women, "women", "Product")</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aa-single-promo-right">
+                                    <div class="aa-promo-banner">
+                                        <img src="@Url.Content("~/Content/")img/promo-shoes.jpg" alt="img">
+                                        <div class="aa-prom-content">
+                                            <span>Sale Off</span>
+                                            <h4><a href="#">@Html.ActionLink(CorrectTemp.Resources.lang.On_Shoes, "Product", "Product")</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aa-single-promo-right">
+                                    <div class="aa-promo-banner">
+                                        <img src="@Url.Content("~/Content/")img/kids-promo.jpg" alt="img">
+                                        <div class="aa-prom-content">
+                                            <span>@CorrectTemp.Resources.lang.New_Arrivals</span>
+                                            <h4><a href="#">@Html.ActionLink(CorrectTemp.Resources.lang.For_Kids, "Product", "Product")</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="aa-single-promo-right"> 
+                                    <div class="aa-promo-banner">
+                                        <img src="@Url.Content("~/Content/")img/promo-bags.jpg" alt="img">
+                                        <div class="aa-prom-content">
+                                            <span>@CorrectTemp.Resources.lang.twentyfive</span>
+                                            <h4>@Html.ActionLink(CorrectTemp.Resources.lang.For_Bags, "Product", "Product")</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Promo section -->
+
+<!-- Support section -->
+<section id="aa-support">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-support-area">
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                            <span class="fa fa-truck"></span>
+                            <h4>@CorrectTemp.Resources.lang.Free_Ship</h4>
+                        </div>
+                    </div>
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                            <span class="fa fa-clock-o"></span>
+                            <h4>@CorrectTemp.Resources.lang.MoneyBack</h4>
+                        </div>
+                    </div>
+                    <!-- single support -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="aa-support-single">
+                            <span class="fa fa-phone"></span>
+                            <h4>@CorrectTemp.Resources.lang.Support</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Support section -->
+
+<!-- Testimonial -->
+<section id="aa-testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-testimonial-area">
+                    <ul class="aa-testimonial-slider">
+                        <!-- single slide -->
+                        <li>
+                            <div class="aa-testimonial-single">
+                                <p>@CorrectTemp.Resources.lang.About_us</p>
+                                <div class="aa-testimonial-info">
+
+                                    <span>@CorrectTemp.Resources.lang.About_firstline</span><br>
+
+                                    <span>@CorrectTemp.Resources.lang.About_secondline</span>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Testimonial -->
+
+   
+<!-- Client Brand -->
+<section id="aa-client-brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-client-brand-area">
+                    <ul class="aa-client-brand-slider">
+                        <li><a href="#"><img src="@Url.Content("~/Content/")img/client-brand1.png" alt="java img"></a></li>
+                        <li><a href="#"><img src="@Url.Content("~/Content/")img/client-brand2.png" alt="jquery img"></a></li>
+                        <li><a href="#"><img src="@Url.Content("~/Content/")img/client-brand3.png" alt="html5 img"></a></li>
+                        <li><a href="#"><img src="@Url.Content("~/Content/")img/client-brand4.png" alt="css3 img"></a></li>
+                        <li><a href="#"><img src="@Url.Content("~/Content/")img/client-brand5.png" alt="wordPress img"></a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Client Brand -->
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="@Url.Content("~/Content/")js/bootstrap.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="@Url.Content("~/Content/")js/jquery.smartmenus.js"></script>
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="@Url.Content("~/Content/")js/jquery.smartmenus.bootstrap.js"></script>
+<!-- Product view slider -->
+<script type="text/javascript" src="@Url.Content("~/Content/")js/jquery.simpleGallery.js"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/")js/jquery.simpleLens.js"></script>
+<!-- slick slider -->
+<script type="text/javascript" src="@Url.Content("~/Content/")js/slick.js"></script>
+<!-- Price picker slider -->
+<script type="text/javascript" src="@Url.Content("~/Content/")js/nouislider.js"></script>
+
+<!-- Custom js -->
+<script src="@Url.Content("~/Content/")js/custom.js"></script> 

@@ -1,0 +1,75 @@
+﻿
+
+@{
+    ViewBag.Title = "myAccount";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+  <!-- catg header banner section -->
+<section id="aa-catg-head-banner">
+    <img src="@Url.Content("~/Content/")img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+    <div class="aa-catg-head-banner-area">
+        <div class="container">
+            <div class="aa-catg-head-banner-content">
+                <h2>Account Page</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Account</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / catg header banner section -->
+<!-- Cart view section -->
+<section id="aa-myaccount">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-myaccount-area">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="aa-myaccount-login">
+                                <h4>Login</h4>
+                                @using (Html.BeginForm()) {
+                                <form action="~/Controllers/Account" method="post" class="aa-login-form" id="login">
+                                    <label for="email">Email address<span>*</span></label>
+                                    <input type="text" name= "email"  placeholder="Username or email">
+                                    <label for="Password">Password<span>*</span></label>
+                                    <input type="password" name="Password" placeholder="Password">
+                                    <button type="submit" class="aa-browse-btn">Login</button>
+                                    <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
+                                    <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
+                                </form>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="aa-myaccount-register">
+                                <h4>Register</h4>
+                                <form action="AccountController" class="aa-login-form">
+                                    <label>Name<span>*</span></label>
+                                    <input type="text" name="username" placeholder="Your name">
+                                    <label>Shipping address<span>*</span></label>
+                                    <input type="text" name="customeraddress" placeholder="Shipping address">
+                                    <label>Card number<span>*</span></label>
+                                    <input type="text" name="customercardDetails" placeholder="Card number">
+                                    <label>Email address<span>*</span></label>
+                                    <input type="text" name="customerEmail" placeholder="Email address">
+                                    <label>Set Password<span>*</span></label>
+                                    <input type="password" name="customerPassword" placeholder="Set password">
+                                    <label>How do you want to use this site as,</label><br>
+                                    <input type="radio" name="radiobtn" value="normal" checked>Normal customer<br>
+                                    <input type="radio" name="radiobtn" value="reseller">Reseller<br>
+                                    <input type="radio" name="radiobtn" value="premium">Premium member (A membership fee of Rs.2000 will be deducted from your account<br>
+                                    <button type="submit" value="SignIn" class="aa-browse-btn">Register</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Cart view section -->
